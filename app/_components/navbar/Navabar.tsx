@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const NAV_ITEMS = [
@@ -12,24 +12,19 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const html = document.documentElement;
-    if (isDark) html.classList.add("dark");
-    else html.classList.remove("dark");
-  }, [isDark]);
-
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[var(--color-bg)]/80 backdrop-blur-md shadow-sm container">
+    <nav className="fixed top-[10px] w-full z-50 bg-[var(--color-bg)]/80 backdrop-blur-md shadow-sm container">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="#hero"
           className="font-bold text-xl text-[var(--color-primary)]"
         >
-          Kourosh.dev
+          <span className="text-2xl text-[#334741]">K</span>{" "}
+          <span className="text-xl text-[#abaeae]">.</span>{" "}
+          <span className="text-xl text-[#334741]">b-97</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -44,30 +39,15 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-
-          <li>
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded hover:bg-[var(--color-surface)] transition-colors"
-            >
-              {isDark ? "☀️" : "🌙"}
-            </button>
-          </li>
         </ul>
 
-        {/* Mobile */}
+        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4 text-[var(--color-text)]">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="text-2xl"
           >
             ☰
-          </button>
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded hover:bg-[var(--color-surface)] transition-colors"
-          >
-            {isDark ? "☀️" : "🌙"}
           </button>
         </div>
       </div>
