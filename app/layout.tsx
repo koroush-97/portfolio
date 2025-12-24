@@ -32,7 +32,7 @@ const poppins = localFont({
 
 export const metadata: Metadata = {
   title: "Kourosh | Frontend Developer",
-  description: "Personal portfolio built with Next.js & Tailwind CSS",
+  description: "Personal portfolio ",
 };
 
 export default function RootLayout({
@@ -47,8 +47,9 @@ export default function RootLayout({
     ${poppins.variable}
     font-sans
     antialiased
-    bg-(--color-bg)
-    text-(--color-text)
+    min-h-screen
+    bg-[var(--color-bg)]
+    text-[var(--color-text)]
     transition-colors duration-300
   `}
       >
