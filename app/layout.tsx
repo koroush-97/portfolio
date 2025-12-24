@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import "./_styles/globals.css";
 import localFont from "next/font/local";
 
@@ -32,7 +31,7 @@ const poppins = localFont({
 
 export const metadata: Metadata = {
   title: "Kourosh | Frontend Developer",
-  description: "Personal portfolio ",
+  description: "Personal portfolio showcasing projects, skills, and experience",
 };
 
 export default function RootLayout({
@@ -44,16 +43,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`
-    ${poppins.variable}
-    font-sans
-    antialiased
-    min-h-screen
-    bg-[var(--color-bg)]
-    text-[var(--color-text)]
-    transition-colors duration-300
-  `}
+          ${poppins.className}
+          antialiased
+          min-h-screen
+          bg-[var(--color-bg)]
+          text-[var(--color-text)]
+          transition-colors duration-300
+        `}
       >
-        <main className="min-h-screen">{children}</main>
+        <main className="mx-auto flex flex-col">{children}</main>
       </body>
     </html>
   );
