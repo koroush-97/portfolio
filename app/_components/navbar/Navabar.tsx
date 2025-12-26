@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MdOutlineMail } from "react-icons/md";
 import Link from "next/link";
 
 const NAV_ITEMS = [
@@ -22,9 +23,12 @@ export default function Navbar() {
           href="#hero"
           className="font-bold text-xl text-[var(--color-primary)]"
         >
-          <span className="text-2xl text-[#334741]">K</span>{" "}
-          <span className="text-xl text-[#abaeae]">.</span>{" "}
-          <span className="text-xl text-[#334741]">b-97</span>
+          <span className="flex md:hidden">
+            <MdOutlineMail />
+          </span>
+          <span className="hidden md:flex text-sm">
+            kooroshbagheri97director@gmail.com
+          </span>
         </Link>
 
         {/* Desktop Nav */}
